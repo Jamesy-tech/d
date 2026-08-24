@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>/Jamesy-tech/directory/</title>
+        <style>
+            body {
+                margin: 24px;
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: 16px;
+                color: #111;
+                background: #fff;
+            }
+
+            h1 {
+                font-size: 24px;
+                font-weight: normal;
+                margin-bottom: 6px;
+            }
+
+            .path {
+                font-size: 14px;
+                margin-bottom: 18px;
+            }
+
+            .path input {
+                width: 420px;
+                padding: 3px 5px;
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: 14px;
+                border: 1px solid #888;
+            }
+
+            .path button {
+                padding: 3px 9px;
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: 14px;
+                background: #eee;
+                border: 1px solid #888;
+                cursor: pointer;
+            }
+
+            .path button:hover {
+                background: #ddd;
+            }
+
+            .info {
+                margin-bottom: 14px;
+            }
+
+            .file {
+                margin: 5px 0;
+            }
+
+            .folder {
+                margin: 5px 0;
+            }
+
+            a {
+                color: #0000ee;
+                text-decoration: underline;
+            }
+
+            hr {
+                border: 0;
+                border-top: 1px solid #aaa;
+                margin: 14px 0;
+            }
+
+            footer {
+                margin-top: 25px;
+                font-size: 13px;
+                color: #555;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>/Jamesy-tech/directory/</h1>
+
+        <div class="path">
+            <a href="../">Home</a>
+            &nbsp;|&nbsp;
+            <input
+                type="text"
+                id="path"
+                value="/Jamesy-tech/directory/"
+                placeholder="Enter a file or directory..."
+            >
+            <button onclick="goToPath()">Go</button>
+        </div>
+
+        <hr>
+
+        <div class="info">
+            Directory listing:
+            <strong>/Jamesy-tech/directory/</strong>
+        </div>
+
+        <div class="folder">
+            <a href="../">../</a>
+        </div>
+
+        <div class="folder">
+            <a href="assets/">assets/</a>
+        </div>
+
+        <div class="folder">
+            <a href="downloads/">downloads/</a>
+        </div>
+
+        <div class="folder">
+            <a href="images/">images/</a>
+        </div>
+
+        <div class="folder">
+            <a href="projects/">projects/</a>
+        </div>
+
+        <div class="folder">
+            <a href="scripts/">scripts/</a>
+        </div>
+
+        <hr>
+
+        <div class="file">
+            <a href="about.html">about.html</a>
+        </div>
+
+        <div class="file">
+            <a href="contact.html">contact.html</a>
+        </div>
+
+        <div class="file">
+            <a href="index.html">index.html</a>
+        </div>
+
+        <div class="file">
+            <a href="projects.html">projects.html</a>
+        </div>
+
+        <div class="file">
+            <a href="README.txt">README.txt</a>
+        </div>
+
+        <div class="file">
+            <a href="assets/style.css">assets/style.css</a>
+        </div>
+
+        <div class="file">
+            <a href="assets/logo.png">assets/logo.png</a>
+        </div>
+
+        <div class="file">
+            <a href="scripts/main.js">scripts/main.js</a>
+        </div>
+
+        <div class="file">
+            <a href="scripts/update.sh">scripts/update.sh</a>
+        </div>
+
+     <footer>
+    &copy; Jamesy-tech
+</footer>
+
+        <script>
+            function goToPath() {
+                let path = document.getElementById("path").value.trim();
+
+                if (!path) return;
+
+                if (!path.startsWith("http://") && !path.startsWith("https://")) {
+                    if (!path.startsWith("/")) {
+                        path = "/" + path;
+                    }
+
+                    window.location.href = path;
+                } else {
+                    window.location.href = path;
+                }
+            }
+
+            document.getElementById("path").addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    goToPath();
+                }
+            });
+        </script>
+
+    </body>
+</html>
